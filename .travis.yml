@@ -2,6 +2,7 @@ language: python
 python:
 - '3.6'
 script: true
+before_deploy: mkdir build && "mv bashtemplate.sh build"
 deploy:
   provider: s3
   access_key_id: AKIAJTADPIYLKV7LPKAQ
