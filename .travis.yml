@@ -1,5 +1,15 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install: pip install -r requirements.txt
-script: ./deploy.sh
+deploy:
+  provider: s3
+  access_key_id: AKIAJTADPIYLKV7LPKAQ
+  secret_access_key:
+    secure: FidkkQ0Sp4ooCs2XImMbUq1dYc/OkSsbeaktH6fdVULZif4ubMVCfheiLL24Z6+FSckPjsO/gihdZ4zPiBt9evp9N15OW7ymzVZyrPclQgP1W8z5c2PnmzUA8rvfCTn00Cez9Jf0iWJGme39BpP+1wbxSSwBDwNR2jood2PQjYnmEPCWG/v4EbE8AWu+Zh3q14neEF5mmCyimuxk1Mqc95ben189gKKhcnpuYyYJMVlO7U7qwFgiEGl7zTXQwcU/qGcol2+mJ0ifDS1ajbKBNU20Pmcmj0jBG3skdPmHmnr9BE9uZRCl/iyDXHnaHEGF2zS3ScMEnUOFiUT/KTTxhU1C1JqnCuvslIFtOber+T98TaT7hHF/SpTkAcEeAs0nj9n/OG/4ozRpAnXuao3VL/iVg02Fats/DaplJkAyWBwOA4SoJ+2oALns8ELg9TH9IYxlD2qd5ZmcD4vV7yRM8cAWCzNh9k9PPDNPkT7KzIlDbTQsK/pkDqCoCPNPof53tnzoSU1JuQi8dXYwJPkcH9wHQA1MVXEvxPwVqHqCH1c8tWKugXS5HbFlKTmFfYUjrMjjKZbBiylauEzXLOEEfW29cwuyzyicwWx34OsUv2O6IhLTOoNnMuAzEiigea9qPG8i/tY4+xhXcEk7feE0K/KGuvjSEOFqVRbeipHNzSI=
+  bucket: bashtemplate.sh
+  acl: ''
+  local_dir: build
+  on:
+    repo: eppeters/bashtemplate.sh
+    branch: travis-builds
